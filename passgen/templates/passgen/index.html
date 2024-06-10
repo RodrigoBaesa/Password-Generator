@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Generator</title>
+</head>
+<body>
+    <h1>Password Generator</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+
+        <button class="submitButton">Generate</button>
+    </form>
+</body>
+</html>
