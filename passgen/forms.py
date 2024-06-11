@@ -17,8 +17,8 @@ class PassGenForm(forms.Form):
         required=False,
         widget=forms.CheckboxInput(attrs={'class': 'checkboxInput'})
     )
-    include_similar_characters = forms.BooleanField(
-        label='Include similar characters (e.g. 0O l1 2Z)',
+    remove_similar_characters = forms.BooleanField(
+        label='Remove similar characters (e.g. 0O l1 2Z)',
         required=False,
         widget=forms.CheckboxInput(attrs={'class': 'checkboxInput'})
     )

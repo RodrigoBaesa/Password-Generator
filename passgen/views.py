@@ -22,10 +22,10 @@ class Index(View):
             if form.cleaned_data['include_symbols']:
                 available_characters += string.punctuation
 
-            if form.cleaned_data['include_similar_characters']:
+            if form.cleaned_data['remove_similar_characters']:
                 ambiguous_characters = ['Z', '2', 'l', '1', '0', 'O', 'o']
-                available_characters = re.sub('|'.join(ambiguous_characters), ' ', available_characters)
+                available_characters = re.sub('|'.join(ambiguous_characters), '', available_characters)
 
             password = ''.join(random.choice(available_characters) for i in range(form.cleaned_data['length']))
             print(password)
-        return render(request, 'passgen/index.html')
+        return render(request, 'passgen/password.html', {'password': password})
